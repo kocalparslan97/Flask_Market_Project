@@ -23,6 +23,7 @@
                 </tr>
                 </thead>
                 <tbody>
+
                 <!-- Your rows inside the table HERE: -->
                 {% for item in items %}
                     {% include 'includes/items_modals.html' %}
@@ -35,13 +36,13 @@
                         <td>
                             <!-- Urun hakkinda bilgi almak icin -->
                             <button class="btn btn-outline btn-info" data-toggle="modal"
-                                    data-target="#Modal-MoreInfo-{{ item.id }}">
+                                    data-target="#Modal-MoreInfo-{{ item.id }}" datasrc="{{ item.image }}">
                                 More Info
                             </button>
                             <!-- Urunu satin almak icin  -->
                             <button class="btn btn-outline btn-success" data-toggle="modal"
-                                    data-target="#Modal-PurchaseConfirm-{{ item.id }}">Purchase this
-                                Item
+                                    data-target="#Modal-PurchaseConfirm-{{ item.id }}" datasrc="{{ item.image }}">
+                                Purchase this Item
                             </button>
                         </td>
                     </tr>
@@ -76,5 +77,4 @@
             </div>
         </div>
     </div>
-
 {% endblock %}
